@@ -9,7 +9,7 @@
 Operating System : Ubuntu 22.04
 CPU : Minimum de 1/2 core
 RAM : 2 à 4 GB
-Storage : SSD ou NVMe avecau moins 5GB d'espace
+Storage : SSD ou NVMe avec au moins 5GB d'espace
 ```
 ## Créer un portefeuille et demander un robinet 🚰
 
@@ -42,10 +42,10 @@ docker rm -f $(docker ps -a -q);docker system prune --volumes -a -f
 rm -rf allora.sh allora-chain/ basic-coin-prediction-node/
 ```
 ```bash
-wget https://raw.githubusercontent.com/dxzenith/allora-worker-node/main/allora.sh && chmod +x allora.sh && ./allora.sh
+wget https://raw.githubusercontent.com/Dropxtor/Allora-worker-node/main/allora.sh && chmod +x allora.sh && ./allora.sh
 ```
 - Au milieu de l'exécution de la commande, il vous sera demandé keyring phrase, ici vous devez écrire un mot de passe (exemple : 12345678)
-- Pendant le collage HEAD_ID, n'utilisez pas Ctrl+Cpour copier et Ctrl+V pour coller, sélectionnez simplement l'ensemble KEY_IDet appuyez sur clique droite
+- Pendant le collage HEAD_ID, n'utilisez pas Ctrl+C pour copier et Ctrl+V pour coller, sélectionnez simplement l'ensemble KEY_ID et appuyez sur clique droite
 
 
 ## Vérifier l'état du nœud 
