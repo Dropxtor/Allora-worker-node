@@ -7,9 +7,9 @@
 - Vous devez acheter un VPS qui répond à toutes ces exigences : 
 ```bash
 Operating System : Ubuntu 22.04
-CPU : Minimum of 1/2 core
-RAM : 2 a 4 GB
-Storage : SSD ou NVMe with au moins 5GB d'espace
+CPU : Minimum de 1/2 core
+RAM : 2 à 4 GB
+Storage : SSD ou NVMe avecau moins 5GB d'espace
 ```
 ## Créer un portefeuille et demander un robinet 🚰
 
