@@ -111,7 +111,7 @@ echo -e "${BOLD}${UNDERLINE}${DARK_YELLOW}Importing wallet...${RESET}"
 allorad keys add testkey --recover
 echo
 
-echo "Request faucet to your wallet from this link: https://faucet.edgenet.allora.network/"
+echo "Request faucet to your wallet from this link: https://faucet.testnet-1.testnet.allora.network/"
 echo
 
 echo -e "${BOLD}${UNDERLINE}${DARK_YELLOW}Installing worker node...${RESET}"
@@ -146,6 +146,9 @@ read -p "Enter HEAD_ID: " HEAD_ID
 echo
 
 read -p "Enter WALLET_SEED_PHRASE: " WALLET_SEED_PHRASE
+echo
+
+read -p "Enter TOPIC_ID: " TOPIC_ID
 echo
 
 echo -e "${BOLD}${UNDERLINE}${DARK_YELLOW}Generating docker-compose.yml file...${RESET}"
@@ -215,11 +218,10 @@ services:
           --runtime-path=/app/runtime --runtime-cli=bls-runtime --workspace=/data/workspace \
           --private-key=/data/keys/priv.bin --log-level=debug --port=9011 \
           --boot-nodes=/ip4/172.22.0.100/tcp/9010/p2p/$HEAD_ID \
-          --topic=allora-topic-1-worker \
           --allora-chain-key-name=testkey \
           --allora-chain-restore-mnemonic='$WALLET_SEED_PHRASE' \
-          --allora-node-rpc-address=https://allora-rpc.edgenet.allora.network/ \
-          --allora-chain-topic-id=1
+          --allora-node-rpc-address=https://allora-rpc.testnet-1.testnet.allora.network \
+          --topic=allora-topic-$TOPIC_ID-worker --allora-chain-worker-mode=worker
     volumes:
       - ./worker-data:/data
     working_dir: /data
@@ -284,3 +286,4 @@ echo
 
 echo -e "${BOLD}${DARK_YELLOW}Checking running Docker containers...${RESET}"
 docker ps
+echo
